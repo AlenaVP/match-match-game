@@ -1,0 +1,1 @@
+alert('Start match-match-game!');
