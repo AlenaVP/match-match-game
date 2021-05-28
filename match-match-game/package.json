@@ -1,7 +1,8 @@
 {
   "name": "match-match-game",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "dev": "webpack serve --env development"
   },
   "author": "AlenaVP",
   "devDependencies": {
@@ -15,6 +16,7 @@
     "ts-loader": "^9.2.2",
     "typescript": "^4.3.2",
     "webpack": "^5.38.0",
-    "webpack-cli": "^4.7.0"
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }
