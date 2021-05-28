@@ -1,3 +1,5 @@
-import { test } from './test'
+const img = require('./assets/ava.png');
 
-test();
+document.body.innerHTML = `
+  <img src="${img}" alt="ava">
+`;

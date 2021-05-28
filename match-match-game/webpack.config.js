@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    assetModuleFilename: 'assets/[hash][ext]',
   },
   module: {
     rules: [
@@ -13,6 +14,14 @@ module.exports = {
         test: /\.[tj]s$/,
         use: 'ts-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg|svg|webp)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf)$/i,
+        type: 'asset/resource',
       }
     ],
   },
