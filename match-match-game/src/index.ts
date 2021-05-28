@@ -1,5 +1,3 @@
-const img = require('./assets/ava.png');
+import './style.scss';
 
-document.body.innerHTML = `
-  <img src="${img}" alt="ava">
-`;
+console.log('Hello world');
