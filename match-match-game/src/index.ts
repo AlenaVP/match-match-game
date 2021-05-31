@@ -1,13 +1,13 @@
 import './style.scss';
 
-import {createIndex} from './scripts/createIndex';
-import {createAbout} from './scripts/createAbout';
+import { createIndex } from './scripts/createIndex';
+import { createAbout } from './scripts/createAbout';
 
-import {registration} from './scripts/registration';
+import { registration } from './scripts/registration';
 
 createIndex();
 
-let pageIdx = 'about';
+const pageIdx = 'about';
 createAbout(false);
 
 registration();

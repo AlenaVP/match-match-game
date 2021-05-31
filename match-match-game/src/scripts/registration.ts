@@ -30,9 +30,9 @@ export function registration(): void {
     }
 
     if (
-      firstName.validity.valid &&
-      lastName.validity.valid &&
-      email.validity.valid
+      firstName.validity.valid
+      && lastName.validity.valid
+      && email.validity.valid
     ) {
       btnAddUser.classList.remove('invalid');
     } else {
