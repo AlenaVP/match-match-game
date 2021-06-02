@@ -47,5 +47,5 @@ export function createIndex(): void {
 </div>
 <h1>Match-match-game</h1>
 </header>
-<main class="main"></main>`;
+<main id="main"></main>`;
 }

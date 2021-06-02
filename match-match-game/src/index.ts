@@ -7,7 +7,13 @@ import { createAbout } from './scripts/createAbout';
 import { registration } from './scripts/registration';
 
 window.onload = () => {
-  new App(document.body);
+  const appElement = document.getElementById('main');
+  
+  if (!appElement) {
+    throw Error('App root element not found');
+  }
+
+  new App(appElement);
 }
 
 createIndex();

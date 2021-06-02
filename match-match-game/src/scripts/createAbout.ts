@@ -5,7 +5,7 @@ export function createAbout(isAuthorized: boolean): void {
 
   const emptyImg = require('../assets/images/empty.svg');
 
-  const main: any = document.querySelector('.main');
+  const main: any = document.getElementById('main');
 
   if (!isAuthorized) {
     const emailPattern = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@"
