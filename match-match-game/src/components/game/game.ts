@@ -32,7 +32,7 @@ export class Game extends BaseComponent {
   }
 
   private async cardHandler(card: Card) {
-    if (this.isAnimation) {
+    if (this.isAnimation || !card.isFlipped) {
       return;
     }
     this.isAnimation = true;
