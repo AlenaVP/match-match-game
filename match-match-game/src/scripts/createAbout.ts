@@ -1,4 +1,4 @@
-export function createAbout(isAuthorized: boolean): void {
+export function createAbout(isAuthorized: boolean = false): void {
   const registerImg = require('../assets/images/image1.svg');
   const settingsImg = require('../assets/images/image2.svg');
   const gameFieldImg = require('../assets/images/image3.svg');

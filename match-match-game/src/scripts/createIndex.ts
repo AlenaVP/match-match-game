@@ -14,7 +14,7 @@ export function createIndex(): void {
     <nav class="nav">
       <ul class="nav__list">
         <li class="nav__list__item">
-          <a href="about.html" class="active">
+          <a href="about.html" id="about" class="active">
             <figure>
               <img src="${circleImg}" alt="">
               <div class="question-sign">?</div>
@@ -23,7 +23,7 @@ export function createIndex(): void {
           </a>
         </li>
         <li class="nav__list__item">
-          <a href="score.html">
+          <a href="score.html" id="score">
             <figure>
               <img src="${starImg}" alt="">
               <figcaption>best score</figcaption>
@@ -31,7 +31,7 @@ export function createIndex(): void {
           </a>
         </li>
         <li class="nav__list__item">
-          <a href="settings.html">
+          <a href="settings.html" id="settings">
             <figure>
               <img src="${gearImg}" alt="">
               <figcaption>game settings</figcaption>
