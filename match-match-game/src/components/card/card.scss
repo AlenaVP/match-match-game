@@ -1,0 +1,58 @@
+.card-container {
+  margin: 1%;
+  flex: 1 0 20%;
+
+  display: flex;
+  justify-content: center;
+
+  cursor: pointer;
+  perspective: 50rem;
+
+  &:hover > .card {
+    transform: translateZ(35px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.card {
+  position: relative;
+  width: 16.8rem;
+  height: 16.8rem;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #000;
+
+  transform-style: preserve-3d;
+  transform-origin: right;
+  transition: all 0.5s;
+
+  & > div {
+    backface-visibility: hidden;
+  }
+
+  &__face,
+  &__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    border-radius: inherit;
+    overflow: hidden;
+    background-color: cornsilk;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &.flipped {
+    transform: rotateY(180deg) translateX(-100%);
+    transform-origin: left;
+  }
+
+  &__back {
+    background-color: lightseagreen;
+    background-image: url("../assets/cover.png");
+
+    transform: rotateY(180deg);
+  }
+}
