@@ -46,8 +46,7 @@ export class Game extends BaseComponent {
 
     if (this.activeCard.image != card.image) {
       await delay(FLIP_DELAY);
-      this.activeCard.flipToBack();
-      await card.flipToBack();
+      await Promise.all([this.activeCard.flipToBack(), card.flipToBack()]);
     }
 
     this.activeCard = undefined;
