@@ -1,10 +1,10 @@
-import { Field } from "./components/field/field";
+import { Game } from "./components/game/game";
 
 export class App {
-  private readonly field: Field;
+  private readonly game: Game;
 
   constructor(private readonly rootElement: HTMLElement) {
-    this.field = new Field();
-    this.rootElement.appendChild(this.field.element);
+    this.game = new Game();
+    this.rootElement.appendChild(this.game.element);
   }
 }
