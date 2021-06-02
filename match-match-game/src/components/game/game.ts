@@ -8,8 +8,8 @@ const FLIP_DELAY = 300;
 
 export class Game extends BaseComponent {
   private readonly field: Field;
-
   private activeCard?: Card;
+  private isAnimation = false;
 
   constructor() {
     super();
@@ -32,6 +32,11 @@ export class Game extends BaseComponent {
   }
 
   private async cardHandler(card: Card) {
+    if (this.isAnimation) {
+      return;
+    }
+    this.isAnimation = true;
+
     await card.flipToFace();
 
     if (!this.activeCard) {
@@ -46,5 +51,6 @@ export class Game extends BaseComponent {
     }
 
     this.activeCard = undefined;
+    this.isAnimation = false;
   }
 }
