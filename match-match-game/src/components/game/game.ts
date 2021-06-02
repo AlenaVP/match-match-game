@@ -41,6 +41,7 @@ export class Game extends BaseComponent {
 
     if (!this.activeCard) {
       this.activeCard = card;
+      this.isAnimation = false;
       return;
     }
 

@@ -28,8 +28,8 @@ export class Card extends BaseComponent {
 
   private flip(isFace = false): Promise<void> {
     return new Promise((resolve) => {
-      this.element.classList.toggle(FLIP_CLASS, !isFace);
-      this.element.addEventListener('transitionend', () => resolve, {
+      this.element.classList.toggle(FLIP_CLASS, isFace);
+      this.element.addEventListener('transitionend', () => resolve(), {
         once: true,
       });
     });

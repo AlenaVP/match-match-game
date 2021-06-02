@@ -20,7 +20,7 @@ export class Field extends BaseComponent {
     this.cards = cards;
     this.cards.forEach((card) => this.element.appendChild(card.element));
     setTimeout(() => {
-      this.cards.forEach((card) => card.flipToBack);
+      this.cards.forEach((card) => card.flipToBack());
     }, SHOW_TIME * 1000);
   };
 }
