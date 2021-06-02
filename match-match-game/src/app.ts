@@ -1,5 +1,5 @@
-import { Game } from "./components/game/game";
-import { ImageCategoryModel } from "./models/image-category-model";
+import { Game } from './components/game/game';
+import { ImageCategoryModel } from './models/image-category-model';
 
 export class App {
   private readonly game: Game;

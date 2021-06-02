@@ -1,11 +1,11 @@
-import { App } from '../../src/app';
+import { App } from '../app';
 
-export function startGame(isAuthorized: boolean = false): void {
+export function startGame(): void {
   const appElement = document.getElementById('main');
 
-    if (!appElement) {
-      throw Error('App root element not found');
-    }
+  if (!appElement) {
+    throw Error('App root element not found');
+  }
 
-    new App(appElement).start();
+  new App(appElement).start();
   }

@@ -1,14 +1,16 @@
-import { BaseComponent } from "../base-component";
-import { Field } from "../field/field";
-import { Card } from "../card/card";
+import { BaseComponent } from '../base-component';
+import { Field } from '../field/field';
+import { Card } from '../card/card';
 
-import { delay } from "../../shared/delay";
+import { delay } from '../../shared/delay';
 
 const FLIP_DELAY = 300;
 
 export class Game extends BaseComponent {
   private readonly field: Field;
+
   private activeCard?: Card;
+
   private isAnimation = false;
 
   constructor() {
@@ -45,7 +47,7 @@ export class Game extends BaseComponent {
       return;
     }
 
-    if (this.activeCard.image != card.image) {
+    if (this.activeCard.image !== card.image) {
       await delay(FLIP_DELAY);
       await Promise.all([this.activeCard.flipToBack(), card.flipToBack()]);
     }

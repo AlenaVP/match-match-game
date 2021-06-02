@@ -1,5 +1,5 @@
 import './card.scss';
-import { BaseComponent } from "../base-component";
+import { BaseComponent } from '../base-component';
 
 const FLIP_CLASS = 'flipped';
 
@@ -34,5 +34,4 @@ export class Card extends BaseComponent {
       });
     });
   }
-
 }

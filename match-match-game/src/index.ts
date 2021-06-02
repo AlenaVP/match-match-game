@@ -3,13 +3,11 @@ import './style.scss';
 import { createIndex } from './scripts/createIndex';
 import { createAbout } from './scripts/createAbout';
 
-import { startGame } from "./scripts/startGame";
+import { startGame } from './scripts/startGame';
 
 import { registration } from './scripts/registration';
 
-
 window.onload = () => {
-
   createIndex();
   createAbout();
   registration();
@@ -21,7 +19,7 @@ window.onload = () => {
   aboutPage.addEventListener('click', (e: any) => {
     e.preventDefault();
     const main: any = document.getElementById('main');
-    main.innerHTML = ``;
+    main.innerHTML = '';
     createAbout();
     registration();
   });
@@ -33,7 +31,7 @@ window.onload = () => {
   settingsPage.addEventListener('click', (e: any) => {
     e.preventDefault();
     const main: any = document.getElementById('main');
-    main.innerHTML = ``;
+    main.innerHTML = '';
     startGame();
   });
-}
+};
