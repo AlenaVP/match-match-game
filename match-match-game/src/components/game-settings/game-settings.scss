@@ -1,0 +1,54 @@
+.header-right {
+  width: 207px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-btn {
+  width: 125px;
+}
+
+.ava-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url("../../assets/cover.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.sheet {
+  margin: 0 auto;
+  padding: 32px 46px;
+  max-width: 1000px;
+  background: #ffffff;
+  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.24), 0px 9px 18px rgba(0, 0, 0, 0.18);
+}
+
+.sheet__label-box {
+  position: relative;
+  font-size: 2rem;
+  line-height: 30px;
+}
+
+.sheet__label-box > label {
+  padding-top: 12px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+select {
+  box-sizing: border-box;
+  margin-bottom: 35px;
+  padding: 8px 0 17px;
+  width: 260px;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+option:first-child {
+  background-color: rgba(0, 0, 0, 0.15);
+}
