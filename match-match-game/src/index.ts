@@ -2,6 +2,7 @@ import './style.scss';
 
 import { createIndex } from './scripts/createIndex';
 import { createAbout } from './scripts/createAbout';
+import { BestScore } from './components/best-score/best-score';
 
 import { startGame } from './scripts/startGame';
 
@@ -19,6 +20,9 @@ window.onload = () => {
   aboutPage.addEventListener('click', (e: any) => {
     e.preventDefault();
     const main: any = document.getElementById('main');
+    if (!main) {
+      throw Error('Root element not found');
+    }
     main.innerHTML = '';
     createAbout();
     registration();
@@ -26,11 +30,20 @@ window.onload = () => {
 
   scorePage.addEventListener('click', (e: any) => {
     e.preventDefault();
+    const main = document.getElementById('main');
+    if (!main) {
+      throw Error('Root element not found');
+    }
+    main.innerHTML = '';
+    main.appendChild(new BestScore().element);
   });
 
   settingsPage.addEventListener('click', (e: any) => {
     e.preventDefault();
     const main: any = document.getElementById('main');
+    if (!main) {
+      throw Error('Root element not found');
+    }
     main.innerHTML = '';
     startGame();
   });

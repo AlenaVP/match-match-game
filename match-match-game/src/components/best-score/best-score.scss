@@ -1,0 +1,57 @@
+table {
+  width: 100%;
+  font-family: Roboto, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+
+  border-collapse: collapse;
+  border: none;
+}
+
+caption {
+  text-align: left;
+  font-size: 2rem;
+}
+
+.headline {
+  height: 0;
+  border: none;
+}
+
+tr {
+  height: 63px;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+}
+
+td {
+  padding-top: 21px;
+}
+
+th:first-child {
+  width: 40px;
+}
+
+th:last-child {
+  width: 125px;
+}
+
+img.ava {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.info {
+  margin-left: 16px;
+  padding-bottom: 5px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.email {
+  font-size: 1.2rem;
+}
+
+.score {
+  color: #2196f3;
+}
