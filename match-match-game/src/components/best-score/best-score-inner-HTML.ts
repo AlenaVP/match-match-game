@@ -5,6 +5,7 @@ const imagesJson = require('../../../public/images.json');
 
 export class BestScoreInnerHTML {
   trs: string;
+
   constructor() {
     this.trs = this.create();
   }

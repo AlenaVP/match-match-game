@@ -4,7 +4,9 @@ import './game-settings.scss';
 export class GameSettings extends BaseComponent {
   constructor() {
     super('div', ['sheet']);
+
     this.changeHeaderForGameSettings();
+
     this.element.innerHTML = `
     <div class="sheet__label-box">
     <label for="category">Game cards</label>
@@ -29,7 +31,6 @@ export class GameSettings extends BaseComponent {
   }
 
   private async changeHeaderForGameSettings() {
-    const header = document.querySelector('body > header');
     const navLinks = document.querySelectorAll('.nav__list__item > a');
     navLinks.forEach((a) => {
       if (a.classList.contains('active')) {

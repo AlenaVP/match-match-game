@@ -1,3 +1,23 @@
+.header-right {
+  width: 207px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.stop-game-btn {
+  width: 125px;
+}
+
+.ava-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url("../../assets/cover.png");
+  background-position: center;
+  background-size: cover;
+}
+
 table {
   width: 100%;
   font-family: Roboto, Verdana, sans-serif;

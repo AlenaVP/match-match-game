@@ -8,6 +8,8 @@ export function createAbout(isAuthorized: boolean = false): void {
   const main: any = document.getElementById('main');
 
   if (!isAuthorized) {
+    changeHeaderForAbout();
+
     const emailPattern = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@"
     + "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
     main.innerHTML = `
@@ -74,5 +76,38 @@ export function createAbout(isAuthorized: boolean = false): void {
     </div>
   </main>
     `;
+    }
+
+  function changeHeaderForAbout() {
+    const navLinks = document.querySelectorAll('.nav__list__item > a');
+
+    const currentPage = document.getElementById('about');
+    if (!currentPage) {
+      throw Error('Root element not found');
+    }
+    if (!currentPage.classList.contains('active')) {
+      navLinks.forEach((a) => {
+        if (a.classList.contains('active')) {
+          a.classList.remove('active');
+        }
+      });
+    currentPage?.classList.add('active');
+    }
+
+    const headerRight = document.querySelector('.header-right');
+    if (!headerRight) {
+      throw Error('HeaderRight element not found');
+    }
+      headerRight.innerHTML = '';
+    if (isAuthorized) {
+      headerRight.innerHTML = `
+      <button type="button" class="btn stop-game-btn">stop game</button>
+      <div class="ava-box"></div>
+      `;
+    } else {
+      headerRight.innerHTML = `
+      <button type="button" class="btn register-btn">register new player</button>
+      `;
+    }
   }
 }
