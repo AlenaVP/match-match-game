@@ -10,6 +10,7 @@ export function createAbout(isAuthorized: boolean = false): void {
   if (!isAuthorized) {
     changeHeaderForAbout();
 
+    const pattern = '[A-Za-zА-Яа-я]{1,30}';
     const emailPattern = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@"
     + "(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?";
     main.innerHTML = `
@@ -19,22 +20,21 @@ export function createAbout(isAuthorized: boolean = false): void {
       <form action="" id="register">
         <div class="left">
           <div class="input-field">
-            <input type="text" name="first-name" id="first-name" required pattern="[A-Za-z]+">
+            <input type="text" name="first-name" id="first-name" required pattern="${pattern}">
             <div class="label-box">
               <label for="first-name">First Name</label>
             </div>
             <div class="validate-box"></div>
           </div>
           <div class="input-field">
-            <input type="text" name="last-name" id="last-name" required pattern="[A-Za-z]+">
+            <input type="text" name="last-name" id="last-name" required pattern="${pattern}">
             <div class="label-box">
               <label for="last-name">Last Name</label>
             </div>
             <div class="validate-box"></div>
           </div>
           <div class="input-field">
-            <input type="email" name="email" id="email" required
-              pattern="${emailPattern}">
+            <input type="email" name="email" id="email" required pattern="${emailPattern}">
             <div class="label-box">
               <label for="email">E-mail</label>
             </div>
