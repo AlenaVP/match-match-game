@@ -35,7 +35,9 @@
   }
 
   &__face,
-  &__back {
+  &__back,
+  &__bad-result,
+  &__good-result {
     position: absolute;
     top: 0;
     left: 0;
@@ -54,5 +56,13 @@
     background-image: url("../../assets/cover.png");
 
     transform: rotateY(180deg);
+  }
+
+  &__bad-result {
+    background-color: rgba(255, 0, 0, 0.35);
+  }
+
+  &__good-result {
+    background-color: rgba(0, 255, 0, 0.35);
   }
 }
