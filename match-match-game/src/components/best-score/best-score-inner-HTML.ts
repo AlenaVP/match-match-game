@@ -1,4 +1,4 @@
-import { User } from "../../models/user";
+import { User } from '../../models/user';
 
 const usersJson = require('../../../public/users.json');
 const imagesJson = require('../../../public/images.json');

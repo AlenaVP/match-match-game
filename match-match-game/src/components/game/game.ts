@@ -13,14 +13,18 @@ export class Game extends BaseComponent {
 
   private isAnimation = false;
 
+  private score: number;
+
   constructor() {
     super();
     this.field = new Field();
     this.element.appendChild(this.field.element);
+    this.score = 0;
   }
 
   newGame(images: string[]) {
     this.field.clear();
+    this.score = 0;
     const cards = images
       .concat(images)
       .map((url) => new Card(url))
@@ -57,6 +61,11 @@ export class Game extends BaseComponent {
       document.getElementById('bad-too')?.remove();
     } else {
       this.applyFilter(this.activeCard.element, card.element, false);
+      this.score++;
+
+      if (this.isComplete()) {
+        this.stopGame();
+      }
     }
 
     this.activeCard = undefined;
@@ -73,5 +82,15 @@ export class Game extends BaseComponent {
     filter = new BaseComponent('div', [divClass]);
     filter.element.id = isBad ? 'bad-too' : '';
     cardElement.firstElementChild?.appendChild(filter.element);
+  }
+
+  private isComplete(): boolean {
+    const goodResultCards = document.querySelectorAll('.card__good-result');
+    const cardContainers = document.querySelectorAll('.card-container');
+    return goodResultCards.length === cardContainers.length;
+  }
+
+  private stopGame(): void {
+    alert(`Your score = ${this.score * 100}`);
   }
 }
