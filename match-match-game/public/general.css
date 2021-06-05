@@ -6,6 +6,7 @@ html {
 
 body {
   margin: 0;
+  height: 100vh;
   background: #e5e5e5;
 }
 
@@ -154,10 +155,10 @@ a {
 
 main {
   box-sizing: border-box;
-  margin: 33px auto 125px;
+  margin: 33px auto;
   padding: 28px 36px;
   width: 1000px;
-  height: 802px;
+  min-height: 802px;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 5px;
 }

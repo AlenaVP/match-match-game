@@ -1,4 +1,5 @@
 import { BaseComponent } from '../base-component';
+import { Timer } from '../timer/timer';
 import { Field } from '../field/field';
 import { Card } from '../card/card';
 
@@ -7,6 +8,8 @@ import { delay } from '../../shared/delay';
 const FLIP_DELAY = 300;
 
 export class Game extends BaseComponent {
+  private readonly timer: Timer;
+
   private readonly field: Field;
 
   private activeCard?: Card;
@@ -15,11 +18,18 @@ export class Game extends BaseComponent {
 
   private score: number;
 
+  private gameTime: number;
+
+  private isGameStopped = false;
+
   constructor() {
     super();
+    this.timer = new Timer();
+    this.element.appendChild(this.timer.element);
     this.field = new Field();
     this.element.appendChild(this.field.element);
     this.score = 0;
+    this.gameTime = 0;
   }
 
   newGame(images: string[]) {
@@ -35,6 +45,7 @@ export class Game extends BaseComponent {
     });
 
     this.field.addCards(cards);
+    this.stopwatch();
   }
 
   private async cardHandler(card: Card) {
@@ -84,6 +95,40 @@ export class Game extends BaseComponent {
     cardElement.firstElementChild?.appendChild(filter.element);
   }
 
+  private stopwatch() {
+    let countdown = true;
+    let tic = 30;
+    this.drawTimer(tic--);
+
+    let timerId = setInterval(() => {
+      if (countdown) {
+        this.drawTimer(tic);
+        if (tic === 0) {
+          countdown = false;
+        } else {
+          tic--;
+        }
+      } else {
+        if (this.isGameStopped) {
+          clearInterval(timerId);
+        } else {
+          tic++;
+        }
+        this.gameTime = tic;
+        this.drawTimer(tic);
+      }
+    }, 1000);
+    setTimeout(() => clearInterval(timerId), 3605000);
+  }
+
+  private drawTimer(tic: number) {
+    const m = Math.floor(tic / 60);
+    const min = m > 9 ? `${m}` : `0${m}`;
+    const s = tic % 60;
+    const sec = s > 9 ? s : `0${s}`;
+    this.timer.element.innerText = `${min}:${sec}`;
+}
+
   private isComplete(): boolean {
     const goodResultCards = document.querySelectorAll('.card__good-result');
     const cardContainers = document.querySelectorAll('.card-container');
@@ -91,6 +136,8 @@ export class Game extends BaseComponent {
   }
 
   private stopGame(): void {
-    alert(`Your score = ${this.score * 100}`);
+    this.isGameStopped = true;
+    const gameResult = this.score * 100 - this.gameTime * 10;
+    alert(`Your score = ${gameResult > 0 ? gameResult : 0}`);
   }
 }
